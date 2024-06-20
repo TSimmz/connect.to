@@ -1,7 +1,6 @@
 import '~/styles/globals.css';
-
-import localfont from 'next/font/local';
 import classNames from 'classnames';
+import { primaryFont, secondaryFont } from '~/fonts';
 
 import { TRPCReactProvider } from '~/trpc/react';
 
@@ -11,12 +10,9 @@ export const metadata = {
   icons: [{ rel: 'icon', url: '/favicon.ico' }],
 };
 
-const font = localfont({ src: '../../assets/fonts/QTPeignoir.otf' });
-const fontLite = localfont({ src: '../../assets/fonts/QTPeignoir-Lite.otf' });
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={classNames(font.className, fontLite.className)}>
+    <html lang="en" className={classNames(primaryFont.variable, secondaryFont.variable)}>
       <body>
         <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>
