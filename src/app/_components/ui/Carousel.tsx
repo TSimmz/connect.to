@@ -1,11 +1,12 @@
 import classNames from 'classnames';
+import Image from 'next/image';
 
 interface CarouselProps {}
 
 export default function Carousel({}: CarouselProps) {
   return (
     <>
-      <div className="relative w-full h-[150px] flex justify-center">
+      <div className="relative w-full h-[150px] flex justify-center px-4">
         {new Array(5).fill(5).map((_, index) => (
           <div
             key={index}
@@ -17,7 +18,14 @@ export default function Carousel({}: CarouselProps) {
               'translate-x-[80%] text-right z-0': index === 4,
             })}
           >
-            <div className="h-[150px] w-[150px] bg-slate-600 p-3 ">{index}</div>
+            <div className="h-[150px] w-[150px] bg-slate-600 overflow-hidden">
+              <Image
+                fill={true}
+                src="/Tye_and_Rach.jpg"
+                alt="Test Picture"
+                className="object-cover"
+              />
+            </div>
           </div>
         ))}
       </div>

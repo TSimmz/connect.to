@@ -1,4 +1,5 @@
-import { Header, Carousel, Drawer } from './_components/ui';
+import { Header, Carousel, Drawer, Category, Button, ButtonGroup } from './_components/ui';
+import ButtonCard from './_components/ui/ButtonCard';
 
 export default async function Home() {
   return (
@@ -14,7 +15,42 @@ export default async function Home() {
       </div>
 
       {/* Main Connect body */}
-      <Drawer />
+      <Drawer>
+        <Category name="Category 1">
+          <Button>Button 1</Button>
+          <ButtonGroup>
+            <ButtonCard
+              itemName="Shop Item 1"
+              itemPrice="$50.00"
+              href="/"
+              imageSrc="/Tye_and_Rach.jpg"
+            />
+            <ButtonCard
+              itemName="Shop Item 2"
+              itemPrice="$50.00"
+              href="/"
+              imageSrc="/Tye_and_Rach.jpg"
+            />
+          </ButtonGroup>
+          <ButtonGroup>
+            <ButtonCard
+              itemName="Shop Item 1"
+              itemPrice="$50.00"
+              href="/"
+              imageSrc="/Tye_and_Rach.jpg"
+            />
+            <ButtonCard
+              itemName="Shop Item 2"
+              itemPrice="$50.00"
+              href="/"
+              imageSrc="/Tye_and_Rach.jpg"
+            />
+          </ButtonGroup>
+        </Category>
+        <Category name="Category 2">
+          <Button>Button 1</Button>
+        </Category>
+      </Drawer>
     </main>
   );
 }
